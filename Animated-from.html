@@ -1,0 +1,371 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: math;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box {
+            width: 1000px;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            box-shadow: -8px -8px 20px #bbb, 8px 8px 20px #bbb;
+            border-radius: 10px;
+        }
+
+        .first {
+            width: 50%;
+            height: 500px;
+            background-color: red;
+            position: relative;
+            transition: all 0.6s ease-in-out;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .first_2 {
+            width: 50%;
+            height: 500px;
+            background-color: red;
+            position: relative;
+            transition: all 0.6s ease-in-out;
+            border-radius: 10px 0 0 10px;
+            display: none;
+        }
+
+        .box-heading {
+            text-align: center;
+            margin-block: 120px;
+        }
+
+        .box-heading>h1 {
+            font-size: 42px;
+            font-weight: 600;
+            line-height: 1.6em;
+            color: #fff;
+        }
+
+        .box-heading>p {
+            width: 75%;
+            margin: auto;
+            font-size: 20px;
+            line-height: 1.6em;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        .box-btn {
+            margin-top: 40px;
+        }
+
+        .box-btn>button {
+            width: 180px;
+            height: 45px;
+            border: 2px solid #fff;
+            background: transparent;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .second {
+            width: 50%;
+            height: 500px;
+            background-color: #fff;
+            padding: 25px 65px;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .second_2 {
+            width: 50%;
+            height: 500px;
+            background-color: #fff;
+            padding: 25px 65px;
+            position: relative;
+            transition: all 0.5s ease-in-out;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .second_2>h1 {
+            font-size: 42px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: -5px;
+        }
+
+        .second>h1 {
+            font-size: 42px;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: -5px;
+        }
+
+        .icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 45%;
+            margin: 25px auto;
+        }
+
+        .icons>i {
+            width: 35px;
+            height: 35px;
+            font-size: 16px;
+            background: #fff;
+            color: #000;
+            padding: 9px 10px;
+            border-radius: 50px;
+            cursor: pointer;
+            border: 1px solid #000;
+        }
+
+        .icons i.change {
+            padding: 8px 12px;
+        }
+
+        .signup-form {
+            text-align: center;
+        }
+
+        .signup-form>p {
+            font-size: 16px;
+        }
+
+        .signup-form>input {
+            width: 365px;
+            height: 45px;
+            font-size: 16px;
+            margin: 15px 0 20px 0;
+            border: none;
+            padding: 0 10px;
+            border: 1px solid #000;
+            color: tomato;
+        }
+
+      
+
+        .signup-btn {
+            margin-top: 15px;
+        }
+
+        .signup-btn>button {
+            width: 180px;
+            height: 45px;
+            border: 2px solid #fff;
+            background: red;
+            font-size: 16px;
+            font-weight: 600;
+            color: #fff;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .slideleft {
+            left: 500px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.6s ease-in-out;
+            background-color: blue;
+        }
+
+        .slide-right {
+            left: -500px;
+            background-color: #fff;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .new {
+            left: 0px;
+            border-radius: 10px 0px 0px 10px;
+            background-color: red;
+        }
+
+        .new_2 {
+            left: 0px;
+            border-radius: 0px 10px 10px 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box">
+            <div class="first" id="slider-1">
+                <div class="box-heading">
+                    <h1>Welcome Back</h1>
+                    <p>Fill This Form And Learn Coding And Happy Now</p>
+
+                    <div class="box-btn">
+                        <button id="slide-left">Sign In</button>
+                    </div>
+                </div>
+            </div>
+            <div class="second" id="slider_2">
+                <h1>Create Account</h1>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook-f change"></i>
+                    <i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <form class="signup-form">
+                    <p>Create New Account</p>
+                    <input type="text" name="user-name" placeholder="Name">
+                    <input type="email" name="user-mail" placeholder="Email" required>
+                    <input type="password" name="user-password" placeholder="Password" required>
+                    <div class="signup-btn">
+                        <button id="slide-right" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Second  -->
+
+            <div class="first_2">
+                <div class="box-heading">
+                    <h1>Hello Friends</h1>
+                    <p>Fill Your details And Learn Coding With Me</p>
+
+                    <div class="box-btn">
+                        <button id="allchange">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="second_2">
+                <h1>Sign in</h1>
+                <div class="icons">
+                    <i class="fa-brands fa-facebook-f change"></i>
+                    <i class="fa-brands fa-google"></i>
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <form class="signup-form">
+                    <p>Sign Up</p>
+                    <input type="email" name="user-mail" placeholder="Email" required>
+                    <input type="password" name="user-password" placeholder="Password" required>
+                    <div class="signup-btn">
+                        <button id="">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            let slideLeft = document.getElementById("slide-left");
+            let slideRight = document.getElementById("slide-right");
+            let slider_1 = document.getElementById("slider-1");
+            let slider_2 = document.getElementById("slider_2");
+            // second_2
+            let second_2 = document.querySelector(".second_2");
+            let first_2 = document.querySelector(".first_2");
+            // Second Btn 
+            let allChangrBtn = document.getElementById("allchange");
+
+            slideLeft.addEventListener("click", () => {
+                slider_1.classList.add("slideleft");
+                slider_2.classList.add("slide-right");
+                slider_2.style.display = "none";
+
+                // second_2
+                second_2.style.display = "block"
+                second_2.classList.add("slide-right");
+                slider_1.style.display = "none";
+                first_2.style.display = "block"
+                first_2.classList.add("slideleft");
+            });
+
+
+            allChangrBtn.addEventListener("click", () => {
+                first_2.classList.remove("slideleft")
+                first_2.style.display = "none"
+
+
+                slider_1.style.display = "block";
+                slider_1.classList.add("new");
+
+
+                second_2.style.display = "none"
+                second_2.classList.remove("slide-right");
+                slider_2.style.display = "block";
+                slider_2.classList.add("new_2");
+            });
+
+        </script>
+
+
+        <script>
+
+
+            // document.querySelector('.form').addEventListener('submit', function(event) {
+            //   var password = document.getElementById('password').value;
+            //   if (password.length < 8) {
+            //     alert('Password must be at least 8 characters long.');
+            //     event.preventDefault(); // Prevent form submission
+            //   }
+            // });
+
+        </script>
+
+        <!-- <script>
+        let age = 70;
+        let gander = 'female';
+        let finalDiscount;
+
+        if(age <= 5){
+            finalDiscount = '100%';
+        }
+        else if(age <= 8 || gander === 'female'){
+            finalDiscount = '50%';
+        }
+        else if(age >= 65){
+            finalDiscount = '30%'; 
+        };
+        console.log(finalDiscount)
+        alert('Your discount is . '+finalDiscount+'')
+    </script> -->
+        <!-- <script>
+    let jeansPrice = Math.round((((2499 - 41/100 * 2500) - 29 + 25 + 20) * 118/100));
+    let parsePrice = Math.round((((15599 -10/100 * 15600) -272 + 25 + 20) * 118/100));
+    console.log(jeansPrice + parsePrice)
+
+    const arr = [{id:1 , marks: 49,}, {id:2 , marks: 39}, {id:3, marks: 38}, {id:4, marks:45}];
+    const passingMarks = 33;
+    let allPass = arr.every(function(element){
+    return element.marks >= passingMarks;
+    });
+    console.log('ALLPASS', allPass)
+    
+    </script> -->
+</body>
+
+</html>
